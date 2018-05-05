@@ -1,0 +1,30 @@
+{
+  "name": "homework1",
+  "version": "1.0.0",
+  "description": "My first homework in nodejs mentoring program",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node -- ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./ --ext .js"
+  },
+  "keywords": [
+    "nodejs",
+    "babel",
+    "homework",
+    "mentoring"
+  ],
+  "author": "Siarhei Pazdniakou",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "nodemon": "^1.17.3"
+  }
+}
