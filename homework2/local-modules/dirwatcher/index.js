@@ -42,7 +42,6 @@ export default class DirWatcher extends EventEmitter {
           if (!files.find(file => file === filePath)) {
             this.emit('removed', filePath);
             delete this.files[filePath];
-            break;
           }
         }
       })
