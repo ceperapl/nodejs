@@ -1,4 +1,8 @@
 import fs from 'fs';
+import { extname } from 'path';
+import { promisify } from 'util';
+
+const readFileAsync = promisify(fs.readFile);
 
 export default class Importer {
   constructor(parser, parserOptions, encoding) {
@@ -8,13 +12,11 @@ export default class Importer {
   }
 
   import(path) {
-    return new Promise((resolve, reject) => {
-      fs.readFile(path, this.encoding, (err, data) => {
-        if (err) {
-          reject(err);
-        }
+    return new Promise(async (resolve) => {
+      const data = await readFileAsync(path, this.encoding);
+      if (extname(path) === '.csv') {
         resolve(this.parser.toObject(data, this.parserOptions));
-      });
+      }
     });
   }
 

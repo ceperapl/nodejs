@@ -8,5 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "path": "^0.12.7",
+    "util": "^0.10.3"
+  }
 }

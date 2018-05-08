@@ -19,7 +19,9 @@
   "dependencies": {
     "csvjson": "^5.0.0",
     "dirwatcher": "file:local-modules/dirwatcher",
-    "importer": "file:local-modules/importer"
+    "importer": "file:local-modules/importer",
+    "path": "^0.12.7",
+    "util": "^0.10.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

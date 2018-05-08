@@ -1,14 +1,14 @@
 import EventEmitter from 'events';
+import { promisify } from 'util';
 import fs from 'fs';
+import { datesEqual, readDirRecursive } from './utils';
 
-function datesEqual(a, b) {
-  return !(a > b || b > a);
-}
+const stat = promisify(fs.stat);
 
 export default class DirWatcher extends EventEmitter {
   constructor(path, delay) {
     super();
-    this.files = [];
+    this.files = {};
     this.watch(path, delay);
   }
 
@@ -18,41 +18,34 @@ export default class DirWatcher extends EventEmitter {
     }, delay);
   }
 
-  checkFile(filePath) {
-    fs.stat(filePath, (err, stats) => {
-      if (err) {
-        console.log(err);
-      } else {
-        const searchedFiles = this.files.filter(file => (filePath === file.path));
-        if (searchedFiles.length !== 0) {
-          if (!datesEqual(searchedFiles[0].mtime, stats.mtime)) {
-            this.emit('changed', filePath);
-            for (let i = 0; i < this.files.length; i += 1) {
-              if (this.files[i].path === searchedFiles[0].path) {
-                this.files[i].mtime = stats.mtime;
-              }
-            }
-          }
-        } else {
-          this.files.push({
-            path: filePath,
-            mtime: stats.mtime,
-          });
-        }
+  async checkFile(filePath) {
+    const fileStat = await stat(filePath);
+    const fileMtime = this.files[filePath];
+    if (fileMtime) {
+      if (!datesEqual(fileMtime, fileStat.mtime)) {
+        this.emit('changed', filePath);
+        this.files[filePath] = fileStat.mtime;
       }
-    });
+    } else {
+      this.files[filePath] = fileStat.mtime;
+      this.emit('created', filePath);
+    }
   }
 
   dirProcess(path) {
-    fs.readdir(path, (err, items) => {
-      if (err) {
-        console.log(err);
-      } else {
-        items.forEach((item) => {
-          const filePath = `${path}/${item}`;
-          this.checkFile(filePath);
+    readDirRecursive(path)
+      .then((files) => {
+        files.forEach((file) => {
+          this.checkFile(file);
         });
-      }
-    });
+        for (const filePath in this.files) {
+          if (!files.find(file => file === filePath)) {
+            this.emit('removed', filePath);
+            delete this.files[filePath];
+            break;
+          }
+        }
+      })
+      .catch(e => console.error(e));
   }
 }

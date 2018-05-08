@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Siarhei Pazdniakou",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7",
+    "util": "^0.10.3"
+  }
 }
