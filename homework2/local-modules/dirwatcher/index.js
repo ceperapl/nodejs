@@ -38,12 +38,12 @@ export default class DirWatcher extends EventEmitter {
         files.forEach((file) => {
           this.checkFile(file);
         });
-        for (const filePath in this.files) {
+        Object.keys(this.files).forEach((filePath) => {
           if (!files.find(file => file === filePath)) {
             this.emit('removed', filePath);
             delete this.files[filePath];
           }
-        }
+        });
       })
       .catch(e => console.error(e));
   }
