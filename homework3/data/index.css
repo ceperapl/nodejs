@@ -1,0 +1,85 @@
+@font-face {
+    font-family: BravoRG;
+    src: url("qrc:/fonts/BravoRG.otf");
+}
+
+@font-face {
+    font-family: BravoSC;
+    src: url("qrc:/fonts/BravoSC.otf");
+}
+
+@font-face {
+    font-family: OpinionProExtraCondensed;
+    src: url("qrc:/fonts/opinionproextracondensed-light.otf");
+}
+
+@font-face {
+    font-family: OpinionProCondensed;
+    src: url("qrc:/fonts/opinionprocondensed-light.otf");
+}
+
+@font-face {
+    font-family: OpinionProCondensedItalic;
+    src: url("qrc:/fonts/opinionprocondensed-lightitalic.otf");
+}
+
+@font-face {
+    font-family: OpinionPro;
+    src: url("qrc:/fonts/opinionpro-light.otf");
+}
+
+@font-face {
+    font-family: LatinModernMonoCond;
+    src: url("qrc:/fonts/lmmonoltcond10-regular.otf");
+}
+
+@font-face {
+    font-family: FlamingoVR;
+    src: url("qrc:/fonts/flamingo.ttf");
+}
+
+html {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#before-load {
+    overflow: hidden;
+    position: fixed; /*фиксированное положение блока*/
+    left: 0; /*положение элемента слева*/
+    top: 0; /*положение элемента сверху*/
+    height: 100%; /*положение элемента справа*/
+    width: 100%; /*положение элемента снизу*/
+    background: #fff; /*цвет заднего фона блока*/
+    z-index: 1001; /*располагаем его над всеми элементами на странице*/
+}
+
+#before-load i {
+    font-size: 70px; /*размер иконки*/
+    position: absolute; /*положение абсолютное, позиционируется относительно его ближайшего предка*/
+    left: 50%; /*слева 50% от ширины родительского блока*/
+    top: 50%; /*сверху 50% от высоты родительского блока*/
+    margin: -35px 0 0 -35px; /*смещение иконки, чтобы она располагалась по центру*/
+}
+
+.wrapper-dialog-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#new-plant-name {
+    margin-left: 10px;
+    width: 300px;
+}

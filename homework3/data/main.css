@@ -1,0 +1,38 @@
+#main-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("qrc:/images/index_background.jpg");
+/*    background: blue;*/
+}
+
+#main-search-wrapper {
+    position: absolute;
+    top: 100px;
+    width: 700px;
+    height: 200px;
+    margin-left: -350px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+/*    background: red;*/
+}
+
+#index-title {
+    font-family: FlamingoVR;
+    font-size: 26pt;
+    font-weight: normal;
+    cursor: default;
+}
+
+#index-search {
+    width: 350px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
