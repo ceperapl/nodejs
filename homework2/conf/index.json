@@ -1,0 +1,9 @@
+{
+  "watchDir": "./data",
+  "delay": "1000",
+  "encoding": "utf-8",
+  "csvjsonOptions": {
+    "delimiter": ",",
+    "quote": "\""
+  }
+}
