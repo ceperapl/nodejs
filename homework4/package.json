@@ -1,0 +1,49 @@
+{
+  "name": "homework4",
+  "version": "1.0.0",
+  "description": "homework 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node -- ./index.js",
+    "start:plain-server": "babel-node -- ./http-servers/plain-text-server.js",
+    "start:html-server": "babel-node -- ./http-servers/html-server.js",
+    "start:json-server": "babel-node -- ./http-servers/json-server.js",
+    "start:echo-server": "babel-node -- ./http-servers/echo-server.js",
+    "db:create": "NODE_ENV=development sequelize db:create",
+    "start-postgre": "docker run --name postgres -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -d postgres",
+    "stop-postgre": "docker stop postgres && docker rm postgres",
+    "db:migrate": "NODE_ENV=development sequelize db:migrate",
+    "db:migrate:undo": "NODE_ENV=development sequelize db:migrate:undo:all",
+    "db:seed": "NODE_ENV=development sequelize db:seed:all",
+    "db:seed:undo": "NODE_ENV=development sequelize db:seed:undo:all"
+  },
+  "keywords": [],
+  "author": "Siarhei Pazdniakou",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "nodemon": "^1.17.5",
+    "pg": "^7.4.3",
+    "query-parse": "^2.0.0",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0",
+    "stream-replace": "^1.0.0",
+    "swagger-jsdoc": "^1.9.7",
+    "swagger-ui-express": "^3.0.10",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0"
+  }
+}
