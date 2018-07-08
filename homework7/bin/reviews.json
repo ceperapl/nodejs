@@ -1,0 +1,13 @@
+[
+  {
+    "productId": 1,
+    "user": "John Doe",
+    "product": "Product1",
+    "review": "Good product!"
+  }, {
+    "productId": 2,
+    "user": "Marina Selyukova",
+    "product": "Product2",
+    "review": "The product is awesome!"
+  }
+]
