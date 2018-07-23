@@ -1,0 +1,154 @@
+definitions:
+  City:
+    type: object
+    properties:
+      _id:
+        type: string
+        format: int64
+        example: 5b576e00d88bff1271086197
+        description: City id
+      name:
+        type: string
+        example: Gomel
+        description: City name
+      country:
+        type: string
+        example: Belarus
+        description: Country name
+      capital:
+        type: boolean
+        example: false
+        description: Is capital city
+      location:
+        type: object
+        properties:
+          lat:
+            type: number
+            example: 52.441176
+          long:
+            type: number
+            example: 30.987846
+  CityWithoutId:
+    type: object
+    properties:
+      name:
+        type: string
+        example: Gomel
+        description: City name
+      country:
+        type: string
+        example: Belarus
+        description: Country name
+      capital:
+        type: boolean
+        example: false
+        description: Is capital city
+      location:
+        type: object
+        properties:
+          lat:
+            type: number
+            example: 52.441176
+          long:
+            type: number
+            example: 30.987846
+  Product:
+    type: object
+    properties:
+      _id:
+        type: string
+        format: int64
+        example: 5b577e72c93b600e35ada428
+        description: Product id
+      name:
+        type: string
+        example: Product1
+        description: Product name
+      price:
+        type: number
+        example: 13.4
+        description: product price
+      amount:
+        type: number
+        example: 12
+        description: product amount
+  ProductWithoutId:
+    type: object
+    properties:
+      _id:
+        type: string
+        format: int64
+        example: 5b577e72c93b600e35ada428
+        description: Product id
+      name:
+        type: string
+        example: Product1
+        description: Product name
+      price:
+        type: number
+        example: 13.4
+        description: product price
+      amount:
+        type: number
+        example: 12
+        description: product amount
+  Review:
+    type: object
+    properties:
+      _id:
+        type: string
+        format: int64
+        example: 5b5778a7d9931009bdfc142a
+        description: Review id
+      productId:
+        type: string
+        format: int64
+        example: 1
+        description: Product id
+      user:
+        type: string
+        example: John Doe
+        description: Username
+      product:
+        type: string
+        example: Product1
+        description: product name
+      review:
+        type: string
+        example: Good product!
+        description: Review value
+  User:
+    type: object
+    properties:
+      _id:
+        type: string
+        format: int64
+        example: 5b5778a7d9931009bdfc1422
+        description: User id
+      firstName:
+        type: string
+        example: John
+        description: Firstname
+      lastName:
+        type: string
+        example: Doe
+        description: Lastname
+      email:
+        type: string
+        example: demo@demo.com
+        description: User email
+  UserWithoutId:
+    type: object
+    properties:
+      firstName:
+        type: string
+        example: John
+        description: Firstname
+      lastName:
+        type: string
+        example: Doe
+        description: Lastname
+      email:
+        type: string
+        example: demo@demo.com
+        description: User email
