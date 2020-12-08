@@ -1,0 +1,27 @@
+{
+  "name": "homework3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./utils/streams.js",
+    "reverse": "node ./utils/streams.js -a=reverse",
+    "transform": "node ./utils/streams.js --action=transform",
+    "outputFile": "node ./utils/streams.js --action=outputFile --file=./data/computers.csv",
+    "convertFromFile": "node ./utils/streams.js -a=convertFromFile -f=./data/computers.csv",
+    "convertToFile": "node ./utils/streams.js --action=convertToFile --file=./data/computers.csv",
+    "cssBundler": "node ./utils/streams.js --action=cssBundler --path=./data",
+    "help": "node ./utils/streams.js --help --action=transform"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "combined-stream": "^1.0.6",
+    "csv2json": "1.3.0",
+    "minimist": "1.2.0",
+    "request": "^2.87.0",
+    "through2": "2.0.3",
+    "util": "^0.10.3"
+  }
+}
