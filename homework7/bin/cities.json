@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Gomel",
+    "country": "Belarus",
+    "capital": false,
+    "location": {
+      "lat": 52.441176,
+      "long": 30.987846
+    }
+  }, {
+    "name": "Brest",
+    "country": "Belarus",
+    "capital": false,
+    "location": {
+      "lat": 52.097621,
+      "long": 23.734050
+    }
+  }, {
+    "name": "Grodno",
+    "country": "Belarus",
+    "capital": false,
+    "location": {
+      "lat": 53.669354,
+      "long": 23.813131
+    }
+  }, {
+    "name": "Minsk",
+    "country": "Belarus",
+    "capital": true,
+    "location": {
+      "lat": 53.904540,
+      "long": 27.561524
+    }
+  }, {
+    "name": "Moscow",
+    "country": "Russia",
+    "capital": true,
+    "location": {
+      "lat": 55.755826,
+      "long": 37.617300
+    }
+  }, {
+    "name": "Habarovsk",
+    "country": "Russia",
+    "capital": false,
+    "location": {
+      "lat": 48.515784,
+      "long": 135.101171
+    }
+  }, {
+    "name": "Chelabinsk",
+    "country": "Russia",
+    "capital": false,
+    "location": {
+      "lat": 55.164442,
+      "long": 61.436843
+    }
+  }, {
+    "name": "Krasnoyarsk",
+    "country": "Russia",
+    "capital": false,
+    "location": {
+      "lat": 56.015283,
+      "long": 92.893248
+    }
+  }, {
+    "name": "Riga",
+    "country": "Latvia",
+    "capital": true,
+    "location": {
+      "lat": 56.949649,
+      "long": 24.105186
+    }
+  }, {
+    "name": "Washington",
+    "country": "USA",
+    "capital": false,
+    "location": {
+      "lat": 38.907192,
+      "long": -77.036871
+    }
+  }, {
+    "name": "Paris",
+    "country": "France",
+    "capital": false,
+    "location": {
+      "lat": 48.856614,
+      "long": 2.352222
+    }
+  }, {
+    "name": "Oslo",
+    "country": "Norway",
+    "capital": false,
+    "location": {
+      "lat": 59.913869,
+      "long": 10.752245
+    }
+  }
+]
